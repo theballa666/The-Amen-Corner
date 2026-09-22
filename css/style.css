@@ -1,0 +1,560 @@
+/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
+  HTML content. To learn how to do something, just try searching Google for questions like
+   "how to change link color." */
+
+
+body, div, main, section, article {
+  box-sizing: border-box; 
+}
+
+/* universal background color */
+body {
+  background-color: #94918D; 
+}
+
+/* header image */
+header img {
+  width: 500px;
+  max-width: 98%;
+}
+
+/* clearfix hack to prevent image overflow. check out the W3Schools page on it. */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*FONTS*/
+
+/* header font */
+#showComic, header, h1, h2, h3, h4, h5 {
+  font-family: 'Cherry Cream Soda', cursive;
+}
+
+/* body font */
+.subPage p, footer, #authorNotes, .archiveTable {
+  font-family: 'Open Sans', sans-serif;
+  font-size: large;
+}
+
+/* STYLING FOR SUBPAGES (about, characters, etc) */
+
+/*general*/
+
+.subPage {
+  width: 100%;
+  max-width: 1000px;
+  background-color: #C7C2BD;
+  outline: 3px solid #DEC46A;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 0px 12px 12px;
+}
+
+.subPage:not(.archivePage) {
+  text-align: center;
+}
+
+.pageWrap {
+  text-align: center;
+}
+
+/* for pictures displayed to the left */
+.leftPic {
+  clear: left;
+  float:right;
+  margin-left:20px;
+}
+
+/* for pictures displayed to the left */
+.rightPic {
+  clear: right;
+  float:left;
+  margin-left:20px;
+}
+
+/* specific to Characters */
+.charTable, .charTable td { 
+  width: 100%;
+}
+
+/* link colors */
+a {
+      color: #000000;
+    }
+
+a:hover {
+      color: #DEC46A;
+    }
+
+.archiveTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.charTable tr:last-child .charRow {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.charRow {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #00000022;
+}
+
+.charRowInner {
+  display: flex;
+  align-items: flex-start; /* top-align both columns instead of centering */
+  gap: 24px;
+}
+
+.charImageBlock {
+  flex-shrink: 0;
+  width: 350px;
+  margin-top: 45px; /* pushes the whole block down slightly from the row's top edge, landing around the "Age:" line */
+}
+
+.charImageBlock img {
+  display: block;
+  max-width: 100%;
+}
+
+.charImageBlock p {
+  max-width: 100%;
+}
+
+.charBio {
+  text-align: left;
+  flex-grow: 1;
+  max-width: 650px; /* widened from 350px to match your mockup */
+  padding: 10px;
+}
+
+.charBio p {
+  margin: 0 0 10px 0;
+}
+
+.charBio p:last-child {
+  margin-bottom: 0;
+}
+
+.charSectionHeading {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 4px solid #00000055; /* thicker and slightly darker */
+}
+
+.bioText p:not(:first-child) {
+  text-indent: 2em;
+}
+
+/* HEADER */
+header #nav {
+  background-color: #C7C2BD;
+  outline: 3px solid #000000;
+  font-size: 20px;
+  width: 98%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  gap: 16px;
+  flex-wrap: wrap; /* added */
+}
+
+.site-header {
+  text-align: center;
+}
+
+.disclaimer {
+  margin-top: 12px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  z-index: 10;
+}
+
+/* HOMEPAGE */
+
+/* style nav button images */
+.comicNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.comicNav img {
+  width: 80px;
+  max-width: 98%;
+  padding-right: 30px;
+}
+
+/* style comic page image */
+.comicPage img {
+  width: 900px;
+  max-width: 98%;
+}
+
+.comicRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.comicNavSide {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.comicNavSide img {
+  width: 75px;
+  max-width: 100%;
+}
+
+.writeNavLeft, .writeNavRight {
+  min-width: 140px; /* reserve space for arrows even when empty */
+  display: flex;
+}
+
+.writeNavLeft {
+  justify-content: flex-end; /* keeps arrows hugging the image's left edge */
+}
+
+.writeNavRight {
+  justify-content: flex-start; /* keeps arrows hugging the image's right edge */
+}
+
+/* style author notes */
+#authorNotes {
+  background-color:#C7C2BD;
+  outline: 3px solid #000000;
+  margin: auto;
+  padding: 3px;
+  padding-top: 0px;
+  width: 900px;
+  max-width: 98%;
+}
+
+/* Spacing and alignment adjustment for the widgets and author notes */
+.writeAuthorNotes {
+  margin-bottom: 12px;
+}
+
+/*Notice for the user that they can use the arrow keys to navigate*/
+.arrowsNotice {
+  display: flex;
+  justify-content: center;   /* centers horizontally */
+  align-items: center;        /* centers vertically (optional) */
+  text-align: center;         /* centers the text itself */
+  width: 100%;
+}
+
+/* ARCHIVE PAGE */
+
+/* style table in which archive is displayed */
+.archiveTable {
+  width: 90%;
+  border-collapse:collapse;
+}
+
+/* style archive table cells */
+.archiveTable td {
+  padding: 3px;
+  vertical-align: center;
+  
+}
+
+/* style table cell in which page title is displayed */
+.archiveCellTitle:not(.leftAlignTableText) {
+  max-width: 300px;
+  text-align: center;
+}
+
+.archiveCellDate {
+  text-align: right;
+  min-width: 120px;
+}
+
+.archiveCellNum {
+  text-align: center;
+  min-width: 30px;
+}
+
+/* style the thumbnails on the archive page */
+.archiveCellThumb {
+    width: 500px;
+    max-width: 60px;
+}
+.archiveCellThumb img{
+    max-width: 100%;
+  }
+
+/* for left aligning the text in a table cell */
+.leftAlignTableText td {
+  text-align: left;
+}
+
+/* highlight a table row and make pointer into hand when moused over */
+.archiveRow:hover {
+  background-color: #54576B;
+  cursor: pointer;
+}
+
+/* BLOG PAGE */
+.blogList {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.blogPost {
+  border-bottom: 1px solid #00000022;
+  padding: 20px 0;
+}
+
+.blogPost img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.blogPost:last-child {
+  border-bottom: none;
+}
+
+.blogPost h2 {
+  margin-bottom: 4px;
+}
+
+.blogDate {
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.blogPostTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.blogPostTitle img {
+  width: 32px;
+  height: 32px;
+}
+
+.blogPostTitle h2 {
+  margin: 0; /* remove default h2 margin so it aligns cleanly with the icon */
+}
+
+.blogPost ws-widget[type="reactions"] {
+  margin: 8px 0 0;
+}
+
+/* FOOTER */
+footer {
+  color: #421a1a;
+  margin-top: 12px;
+  margin-bottom: 15px;
+  float: left;
+  width: 100%;
+  font-size: 12px;
+}
+
+footer p {
+  margin: auto;
+}
+
+footer a {
+  color: #c8d32b
+}
+
+footer a:hover {
+  color: #868d26
+}
+
+.guestbookFrame {
+  width: 100%;
+  max-width: 1000px;
+  display: block;
+  margin: 0 auto;
+}
+
+.guestbookWrap {
+  margin-bottom: 16px;
+}
+
+/* take away margins from the edges of the screen */
+html, body {
+  margin: 0;
+}
+
+ws-widget {
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+  padding: 4px;
+}
+
+ws-widget[type="comments"] {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footerWidgetRow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 32px;
+  margin: 10px auto;
+  max-width: 1000px;
+  background-color: #C7C2BD;
+  outline: 3px solid #000000;
+  padding: 0 24px;
+  overflow: hidden; /* safety net against any remaining overflow */
+}
+
+.footerWidgetRow > * {
+  min-width: 0; /* allows grid items to shrink below their content's natural width */
+}
+
+.footerWidgetRow ws-widget {
+  margin: 0;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.footerWidgetRow ws-widget[type="status"] {
+  justify-self: end; /* hug the status widget toward the socials box */
+}
+
+.footerWidgetRow ws-widget[type="lastfm"] {
+  justify-self: start; /* hug the lastfm widget toward the socials box */
+}
+
+.footerLinksBox {
+  display: inline-block;
+  background-color: #C7C2BD;
+  outline: 2px solid #000000;
+  padding: 12px 16px; /* second value now adds left/right space */
+}
+
+.discordSection img {
+  width: 40px;
+  height: 40px;
+}
+
+.discordSection p {
+  margin: 6px 0 0;
+  font-size: 0.9em;
+}
+
+.footerDivider {
+  border: none;
+  border-top: 1px solid #00000033;
+  margin: 12px 0;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.socialLinks img {
+  width: 32px;
+  height: 32px;
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 700px) {
+  .footerWidgetRow {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 16px 12px;
+    gap: 20px;
+  }
+
+  .footerWidgetRow ws-widget[type="status"],
+  .footerWidgetRow ws-widget[type="lastfm"] {
+    justify-self: center;
+    text-align: center;
+  }
+
+  .comicRow {
+    position: relative;
+  }
+
+  .comicPage img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .writeNavLeft, .writeNavRight {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    min-width: auto;
+    z-index: 5;
+  }
+
+  .writeNavLeft {
+    left: 4px;
+    justify-content: flex-start;
+  }
+
+  .writeNavRight {
+    right: 4px;
+    justify-content: flex-end;
+  }
+
+  .comicNavSide {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .comicNavSide img {
+    width: 28px;
+  }
+
+  .charRowInner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .charImageBlock {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .charBio {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .leftPic, .rightPic {
+    float: none;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 12px;
+  }
+}

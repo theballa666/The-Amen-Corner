@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Amen Corner | Characters</title>
+
+    <!-- Widget functionality -->
+    <script src="https://u.widget.st/ar.js"></script>
+
+    <!-- style -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Cherry Cream Soda -->
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&display=swap" rel="stylesheet">
+    <!-- Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="img/opalfavicon.png" />
+</head>
+<body align="center">
+
+    <!-- header -->
+    <div class="writeHeader"></div>
+
+    <!-- this character page kind of sucks, its more of an example of the kinds of supplementary pages you can potentially add-->
+    
+    <div class="subPage clearfix" align="center">
+        <div class="archiveTitleRow">
+           <img id="titleIconLeft" alt="Character icon" style="width:50px;height:50px;"/>
+          <h1>Characters</h1>
+           <img id="titleIconRight" alt="Character icon" style="width:50px;height:50px;"/>
+</div>
+
+<script>
+  const iconPool = [
+    { normal: "./img/christophfavicon.png", hover: "./img/christoph_shockedfavicon.png", alt: "Christoph icon" },
+    { normal: "./img/opalfavicon.png", hover: "./img/opalsmilefavicon.png", alt: "Opal icon" },
+    { normal: "./img/faolanfavicon.png", hover: "./img/faolan_winkfavicon.png", alt: "Faolán icon" }
+    // add more characters here as you create their icons
+];
+
+function applyIcon(imgId, character) {
+    const img = document.getElementById(imgId);
+    img.src = character.normal;
+    img.alt = character.alt;
+    img.onmouseover = () => { img.src = character.hover; };
+    img.onmouseout = () => { img.src = character.normal; };
+}
+
+const shuffled = [...iconPool].sort(() => Math.random() - 0.5);
+applyIcon("titleIconLeft", shuffled[0]);
+applyIcon("titleIconRight", shuffled[1]);
+</script>
+
+    <p>The people you should be rooting for. Or not.</p>
+
+    <h2 class="charSectionHeading">Main Characters</h2>
+        <table class="charTable">
+            <!-- Christoph -->
+            <tr>
+                <td class="charRow" style="padding-bottom: 40px;">
+                <div class="charRowInner">
+                <div class="charImageBlock">
+                    <h2>Christoph</h2>
+                    <p>Doctor. Human. Wears glasses.</p>
+                    <img src="img/characters/warnted_christoph.png" alt="Christoph"/>
+                </div>
+                <div class="charBio">
+                    <p><strong>Full Name:</strong> Christoph Senft</p>
+                    <p><strong>Age:</strong> 41</p>
+                    <p><strong>Place of Birth:</strong> Zahnfurt-Hagen, Eberplatz</p>
+                    <p><strong>Race:</strong> Human</p>
+                    <p><strong>Archetype:</strong> Doctor</p>
+                    <p><strong>Affiliation:</strong> Cornerstone College of Health Sciences <i>(alumnus)</i>, Guild of Medicine <i>(aspiring)</i></p>
+                    <p><strong>Likes:</strong> Tea, bread, whittling, pottery, antiques</p>
+                    <p><strong>Dislikes:</strong> Dogma, superstition, drunkards, fish, gossip</p>
+                    <div class="bioText">
+                      <p><strong>Bio:</strong> Most of the world's problems can be solved through logic and reasoning, at least according to Christoph. Part realist, part pragmatist, and sometimes part cynic, he believes that war, famine, and avarice are the rigid byproducts of human folly. Still, when push comes to shove, he's not afraid to engage in a little self-preservation. Logic was his weapon of choice, though its utility was often rendered moot in the face of willful ignorance.</p>
+
+<p>Growing up, Christoph often found himself sifting through his father's medical journals. While his father grew frustrated at the constant reorganizing of his own notes, he couldn't help but feel proud of his son's penchant for knowledge. Unfortunately, his father was not able to witness his admission into the medical field, having passed away during his adolescent years. Christoph carried his grief through his time at the Cornerstone College of Health Sciences, passing his courses with flying colors.</p>
+
+<p>As a practitioner of medical science, his goal is to one day join the Guild of Medicine, a highly prestigious society home to many exclusive doctrines, such as alchemy, chirurgery, toxinology, and more.</p>
+                    </div>
+                </div>
+                </div>
+                </td>
+            </tr>
+            <!-- Opal -->
+            <tr>
+                <td class="charRow" style="padding-bottom: 40px;">
+                <div class="charRowInner">
+                <div class="charImageBlock">
+                    <h2>Opal</h2>
+                    <p>Court wizard. Bookworm. Impish.</p>
+                    <img src="img/characters/warnted_opal.png" alt="Opal"/>
+                </div>
+                <div class="charBio">
+                    <p><strong>Full Name:</strong> Opal Zapepelo'baranchikova-Pepel'shina</p>
+                    <p><strong>Age:</strong> 24</p>
+                    <p><strong>Place of Birth:</strong> Ust'-Pepel, Gora-Kost' Okrug</p>
+                    <p><strong>Race:</strong> Elf, Rogatyane <i>(Hornfolk)</i></p>
+                    <p><strong>Archetype:</strong> Wizard, Flame Domain</p>
+                    <p><strong>Affiliation:</strong> Patron Mystics <i>(current)</i>, Pepel'shina tribe <i>(former)</i></p>
+                    <p><strong>Likes:</strong> Books, puzzles, candles, thunderstorms, bugs</p>
+                    <p><strong>Dislikes:</strong> Crowds, frivolity, long ventures, gambling, confined spaces</p>
+                    <div class="bioText">
+                    <p><strong>Bio:</strong> As if her appearance alone wouldn't frighten the average uninitiated human, simply speaking her full name would send them into a wailing panic, convinced that they've just been cursed. Opal stands out in the predominantly human-inhabited metropolis of Grandhelm, where she serves as the court wizard to Queen Kasimira, an elven monarch whose rise to power remains a mystery. She spends most of her time within the castle walls away from judging eyes — not for her own sake, but theirs.</p>
+
+                    <p>Her childhood was marred by the senseless warfare propelled by an overzealous czar, hellbent on global conquest. Against overwhelming odds, her tribe, the Pepel'shina, showed remarkable resilience in the face of certain death. Alas, years of conflict were put to a tragic end by a single catastrophic spell cast by the czar's powerful, yet acquiescent mages. Opal managed to be the sole survivor of the blast in a manner that even the most gifted scholars describe as nothing short of a miracle.</p>
+
+                    <p>Her natural affinity for reading allowed her to master spells at an astonishing rate, eventually drawing the attention of the Patron Mystics, the queen's elite entourage. Amongst them and her other non-human cohort, she finally found a measure of solace. Through the Mystics, she was able to acquire the necessary arsenal of magic to serve both her queen and herself. As her reputation in Grandhelm grew, so did the reluctance of her detractors — those who once accosted her with biting words turned to biting their lips instead.</p>
+                    </div>
+                </div>
+                </div>
+                </td>
+            </tr>
+            <!-- Faolán -->
+            <tr>
+                <td class="charRow" style="padding-bottom: 40px;">
+                <div class="charRowInner">
+                <div class="charImageBlock">
+                    <h2>Faolán</h2>
+                    <p>Likes everything a monk doesn't, or rather, shouldn't.</p>
+                    <img src="img/characters/warnted_faolan.png" alt="Faolán"/>
+                </div>
+                <div class="charBio">
+                    <p><strong>Full Name:</strong> Faolán Toal</p>
+                    <p><strong>Age:</strong> 25</p>
+                    <p><strong>Place of Birth:</strong> Būd sin Kasap, Kasapan Mountain Range</p>
+                    <p><strong>Race:</strong> Human</p>
+                    <p><strong>Affiliation:</strong> Sanctuary of Grandhelm <i>(current)</i>, Scholars of Righteous Restoration <i>(former)</i></p>
+                    <p><strong>Archetype:</strong> Mystic Monk</p>
+                    <p><strong>Likes:</strong> Alcohol, parlor games, affectionate liasons, calligraphy, soup</p>
+                    <p><strong>Dislikes:</strong> Theatre, lavishness, bardic tales, snakes, bureaucracy</p>
+                    <div class="bioText">
+                    <p><strong>Bio:</strong> Some are born into wealth, others into nobility; Faolán was born into something else entirely: an elite order of disciples intent on restoring faith and justice throughout the continent. While physical prowess was invaluable to the order, their rigorous schooling kept the zealots' minds in check, ensuring that their reputation and mission remained unblemished.</p>
+                    <p>As Faolán grew older, so did his own set of beliefs. Eventually, the never-ending cycle of training and schooling slowly became too burdensome. He decided one day to sneak out and make the daring trek to Grandhelm, where the full scope of his daydreaming could be realized. The Soggy Mill was his first point of interest, where he met the owner, Lydia. Faolán asked for a drink, not really understanding the concept of alcohol or even the concept of purchasing goods. Intrigued by his peculiar nature, she obliged him with a free drink, followed by a second, then a third... From that night on, the two of them became inseparable.</p>
+                    <p>His weekly trips to The Soggy Mill turned into daily visits, sometimes spending a night or two in one of the tavern's spare rooms, unaware that one of the scholars from his order was tracking every unsanctioned excursion. Alcohol was strictly forbidden in their tenets, forcing the order to reluctantly expel one of their once-favored students. Instead of feeling remorse or anger, Faolán felt relief, being no longer bound by his former tutelage. </p>
+                    <p>Lydia offered Faolán permanent residency in her spare guest room, but he rejected the idea of being a burden. Instead, he found volunteer work in the Sanctuary of Grandhelm, which provided him with just enough food, shelter, and busywork to keep him out of trouble — going from apostle to apostate with a newfound sense of purpose.</p>
+                    </div>
+                </div>
+                </div>
+                </td>
+            </tr>
+        </table>
+
+    <h2 class="charSectionHeading">Other Characters</h2>
+        <table class="charTable">
+            <!-- Add secondary characters here, same row structure as above -->
+              <!-- Leona -->
+                <tr>
+                  <td class="charRow" style="padding-bottom: 40px;">
+                  <div class="charRowInner">
+                  <div class="charImageBlock">
+                      <h2>Leona</h2>
+                      <p>Knight Captain of the Tempest Valiant.</p>
+                      <img src="img/characters/warnted_empty.png" alt="Leona"/>
+                </div>
+                <div class="charBio">
+                    <p><strong>Full Name:</strong> Leona Hildebrand</p>
+                    <p><strong>Race:</strong> Human</p>
+                    <p><strong>Archetype:</strong> Knight</p>
+                    <p><strong>Age:</strong> 26</p>
+                    <p><strong>Likes:</strong> Sauerkraut</p>
+                    <p><strong>Dislikes:</strong> </p>
+                    <div class="bioText">
+                    <p><strong>Bio:</strong> </p>
+                    </div>
+                </div>
+                </div>
+                </td>
+            </tr>
+
+              <!-- Fionnán -->
+                <tr>
+                  <td class="charRow" style="padding-bottom: 40px;">
+                  <div class="charRowInner">
+                  <div class="charImageBlock">
+                      <h2>Fionnán</h2>
+                      <p>Holy terror. Literally.</p>
+                      <img src="img/characters/warnted_empty.png" alt="Fionn"/>
+                </div>
+                <div class="charBio">
+                    <p><strong>Full Name:</strong> Fionnán Quigley</p>
+                    <p><strong>Race:</strong> Human</p>
+                    <p><strong>Archetype:</strong> Infantry</p>
+                    <p><strong>Age:</strong> 17</p>
+                    <p><strong>Likes:</strong> </p>
+                    <p><strong>Dislikes:</strong> </p>
+                    <div class="bioText">
+                    <p><strong>Bio:</strong> </p>
+                    </div>
+                </div>
+                </div>
+                </td>
+            </tr>
+
+              <!-- Lydia -->
+                <tr>
+                  <td class="charRow" style="padding-bottom: 40px;">
+                  <div class="charRowInner">
+                  <div class="charImageBlock">
+                      <h2>Lydia</h2>
+                      <p>Proprietor of The Soggy Mill.</p>
+                      <img src="img/characters/warnted_empty.png" alt="Lydia"/>
+                </div>
+                <div class="charBio">
+                    <p><strong>Full Name:</strong> Lydia Mag Raith</p>
+                    <p><strong>Race:</strong> Human</p>
+                    <p><strong>Archetype:</strong> Bartender</p>
+                    <p><strong>Age:</strong> 23</p>
+                    <p><strong>Likes:</strong> </p>
+                    <p><strong>Dislikes:</strong> </p>
+                    <div class="bioText">
+                    <p><strong>Bio:</strong> </p>
+                    </div>
+                </div>
+                </div>
+                </td>
+            </tr>
+        </table>
+</div>
+
+    <!-- footer -->
+    <div class="writeFooter"></div>
+
+<!-- at the end of this page we only call the header and footer scripts, because we don't need use any functions from the other scripts. -->
+<script src="js/comic_header.js" defer></script>
+<script src="js/comic_footer.js" defer></script>
+</body>
+
+</html>

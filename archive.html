@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+    <title>The Amen Corner | Archive</title>
+
+    <!-- Widget functionality -->
+    <script src="https://u.widget.st/ar.js"></script>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Cherry Cream Soda -->
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="img/opalfavicon.png" />
+</head>
+<body>
+    <!-- header -->
+    <div class="writeHeader"></div>
+
+    <div class="subPage clearfix" align="center">
+        <div class="archiveTitleRow">
+           <img id="titleIconLeft" alt="Character icon" style="width:50px;height:50px;"/>
+          <h1>Archive</h1>
+           <img id="titleIconRight" alt="Character icon" style="width:50px;height:50px;"/>
+</div>
+
+<script>
+  const iconPool = [
+    { normal: "./img/christophfavicon.png", hover: "./img/christoph_shockedfavicon.png", alt: "Christoph icon" },
+    { normal: "./img/opalfavicon.png", hover: "./img/opalsmilefavicon.png", alt: "Opal icon" },
+    { normal: "./img/faolanfavicon.png", hover: "./img/faolan_winkfavicon.png", alt: "Faolán icon" }
+    // add more characters here as you create their icons
+];
+
+function applyIcon(imgId, character) {
+    const img = document.getElementById(imgId);
+    img.src = character.normal;
+    img.alt = character.alt;
+    img.onmouseover = () => { img.src = character.hover; };
+    img.onmouseout = () => { img.src = character.normal; };
+}
+
+const shuffled = [...iconPool].sort(() => Math.random() - 0.5);
+applyIcon("titleIconLeft", shuffled[0]);
+applyIcon("titleIconRight", shuffled[1]);
+</script>
+
+        <script>
+        indexPage = "index.html" //set which html page your comics are on, supremely important. archive system will break otherwise
+        </script>
+
+        <div class="chrono">
+            <h1><s>Ov Flask and Folly</s></h1>
+            <h1>Placeholder Comics</h1>
+            <h2>Chronological Order</h2>
+        </div>
+
+        <!--
+        <div class="lastfirst">
+            <h2>"Latest First" Order</h2>
+        </div>
+
+        <div class="chapter1">
+            <h2>Or, divide it into chapters/arcs</h2>
+            <h2>(You can also turn off thumbnails)</h2>
+            <h2>Chapter 1</h2>
+        </div>
+
+        <div class="chapter2">
+            <h2>Chapter 2</h2>
+        </div>
+
+        <div class="chapter3">
+            <h2>Chapter 3</h2>
+        </div>
+
+        <div class="chapter4">
+            <h2>Chapter 4</h2>
+        </div>
+        -->
+    </div>
+
+    <!-- footer-->
+    <div class="writeFooter"></div>
+
+<!-- really important- every js script is called here, be sure to always put them just before the closing body tag, use a defer attribute, and call them in this specific order.-->
+<script src="js/comic_header.js" defer></script>
+<script src="js/comic_settings.js" defer></script>
+<script src="js/comic_archive.js" defer></script>
+<script src="js/comic_footer.js" defer></script>
+</body>
+</html>
