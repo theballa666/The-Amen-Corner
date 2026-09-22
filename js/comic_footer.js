@@ -41,5 +41,30 @@ document.querySelector(".writeFooter").innerHTML = `
         </div>
         <p><strong>Powered by</strong></p>
         <a href="https://rarebit.neocities.org"><img src="img/rarebitlogo_small.png" height = "30" /></a>
+
+        <a href="#" id="backToTop" class="back-to-top">
+        <img src="img/greenseal.png" alt="Top" style="width:20px;height:20px;" /> TOP ↑
+</a>
     </footer>
 `;
+
+window.addEventListener('DOMContentLoaded', () => {
+    const backToTopButton = document.getElementById('backToTop');
+    if (!backToTopButton) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+
+    backToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
