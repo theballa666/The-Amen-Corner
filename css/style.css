@@ -3,13 +3,17 @@
    "how to change link color." */
 
 
-body, div, main, section, article {
-  box-sizing: border-box; 
+body,
+div,
+main,
+section,
+article {
+  box-sizing: border-box;
 }
 
 /* universal background color */
 body {
-  background-color: #94918D; 
+  background-color: #94918D;
 }
 
 /* header image */
@@ -28,12 +32,21 @@ header img {
 /*FONTS*/
 
 /* header font */
-#showComic, header, h1, h2, h3, h4, h5 {
+#showComic,
+header,
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: 'Cherry Cream Soda', cursive;
 }
 
 /* body font */
-.subPage p, footer, #authorNotes, .archiveTable {
+.subPage p,
+footer,
+#authorNotes,
+.archiveTable {
   font-family: 'Open Sans', sans-serif;
   font-size: large;
 }
@@ -72,30 +85,31 @@ header img {
 /* for pictures displayed to the left */
 .leftPic {
   clear: left;
-  float:right;
-  margin-left:20px;
+  float: right;
+  margin-left: 20px;
 }
 
 /* for pictures displayed to the left */
 .rightPic {
   clear: right;
-  float:left;
-  margin-left:20px;
+  float: left;
+  margin-left: 20px;
 }
 
 /* specific to Characters */
-.charTable, .charTable td { 
+.charTable,
+.charTable td {
   width: 100%;
 }
 
 /* link colors */
 a {
-      color: #000000;
-    }
+  color: #000000;
+}
 
 a:hover {
-      color: #DEC46A;
-    }
+  color: #DEC46A;
+}
 
 .archiveTitleRow {
   display: flex;
@@ -119,14 +133,16 @@ a:hover {
 
 .charRowInner {
   display: flex;
-  align-items: flex-start; /* top-align both columns instead of centering */
+  align-items: flex-start;
+  /* top-align both columns instead of centering */
   gap: 24px;
 }
 
 .charImageBlock {
   flex-shrink: 0;
   width: 350px;
-  margin-top: 45px; /* pushes the whole block down slightly from the row's top edge, landing around the "Age:" line */
+  margin-top: 45px;
+  /* pushes the whole block down slightly from the row's top edge, landing around the "Age:" line */
 }
 
 .charImageBlock img {
@@ -141,7 +157,8 @@ a:hover {
 .charBio {
   text-align: left;
   flex-grow: 1;
-  max-width: 650px; /* widened from 350px to match your mockup */
+  max-width: 650px;
+  /* widened from 350px to match your mockup */
   padding: 10px;
 }
 
@@ -156,7 +173,8 @@ a:hover {
 .charSectionHeading {
   margin-top: 32px;
   padding-top: 16px;
-  border-top: 4px solid #00000055; /* thicker and slightly darker */
+  border-top: 4px solid #00000055;
+  /* thicker and slightly darker */
 }
 
 .bioText p:not(:first-child) {
@@ -175,7 +193,19 @@ header #nav {
   justify-content: center;
   min-height: 60px;
   gap: 16px;
-  flex-wrap: wrap; /* added */
+  flex-wrap: wrap;
+  /* added */
+}
+
+#nav a {
+  color: #000000;
+  text-decoration: underline;
+  font-family: 'Cherry Cream Soda', cursive;
+}
+
+#nav a:hover,
+.dropbtn:hover {
+  color: #DEC46A !important;
 }
 
 .site-header {
@@ -193,17 +223,23 @@ header #nav {
 }
 
 .nav-seal {
-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .nav-seal:hover {
-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
+
+
 /* DROPDOWN MENU STYLES */
-.dropdown, .sub-dropdown {
+.dropdown {
   position: relative;
   display: inline-block;
+}
+
+.sub-dropdown {
+  position: relative;
 }
 
 .dropbtn {
@@ -212,18 +248,30 @@ transform: rotate(360deg);
   text-decoration: underline;
 }
 
-.dropdown-content, .sub-dropdown-content {
+.dropdown-content {
   display: none;
   position: absolute;
+  top: 100%;
+  left: 0;
   background-color: #C7C2BD;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   outline: 2px solid #000000;
   z-index: 100;
   text-align: left;
 }
 
-.dropdown-content a, .sub-dropdown-content a {
+.sub-dropdown-content {
+  display: none;
+  position: relative;
+  width: 100%;
+  background-color: #b5b0ab;
+  outline: none;
+  z-index: 101;
+  text-align: left;
+}
+
+.dropdown-content a {
   color: black;
   padding: 10px 14px;
   text-decoration: none;
@@ -232,7 +280,18 @@ transform: rotate(360deg);
   white-space: nowrap;
 }
 
-.dropdown-content a:hover, .sub-dropdown-content a:hover {
+.sub-dropdown-content a {
+  color: black;
+  padding: 8px 14px 8px 24px;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  white-space: nowrap;
+  background-color: #b5b0ab;
+}
+
+.dropdown-content a:hover, 
+.sub-dropdown-content a:hover {
   background-color: #54576B;
   color: #DEC46A;
 }
@@ -241,26 +300,8 @@ transform: rotate(360deg);
   display: block;
 }
 
-.sub-dropdown {
-  display: block;
-}
-
 .sub-dropdown:hover .sub-dropdown-content {
   display: block;
-  position: absolute;
-  left: 100%;
-  top: 0;
-}
-
-.sub-dropdown-content {
-  display: none;
-  position: absolute;
-  left: 100%;
-  top: 0;
-  background-color: #C7C2BD;
-  outline: 2px solid #000000;
-  min-width: 140px;
-  z-index: 99;
 }
 
 /* On mobile/narrow screens, make sub-dropdown stack underneath instead of flying out to the right */
@@ -282,6 +323,7 @@ transform: rotate(360deg);
   justify-content: center;
   align-items: center;
 }
+
 .comicNav img {
   width: 80px;
   max-width: 98%;
@@ -314,22 +356,26 @@ transform: rotate(360deg);
   max-width: 100%;
 }
 
-.writeNavLeft, .writeNavRight {
-  min-width: 140px; /* reserve space for arrows even when empty */
+.writeNavLeft,
+.writeNavRight {
+  min-width: 140px;
+  /* reserve space for arrows even when empty */
   display: flex;
 }
 
 .writeNavLeft {
-  justify-content: flex-end; /* keeps arrows hugging the image's left edge */
+  justify-content: flex-end;
+  /* keeps arrows hugging the image's left edge */
 }
 
 .writeNavRight {
-  justify-content: flex-start; /* keeps arrows hugging the image's right edge */
+  justify-content: flex-start;
+  /* keeps arrows hugging the image's right edge */
 }
 
 /* style author notes */
 #authorNotes {
-  background-color:#C7C2BD;
+  background-color: #C7C2BD;
   outline: 3px solid #000000;
   margin: auto;
   padding: 3px;
@@ -346,9 +392,12 @@ transform: rotate(360deg);
 /*Notice for the user that they can use the arrow keys to navigate*/
 .arrowsNotice {
   display: flex;
-  justify-content: center;   /* centers horizontally */
-  align-items: center;        /* centers vertically (optional) */
-  text-align: center;         /* centers the text itself */
+  justify-content: center;
+  /* centers horizontally */
+  align-items: center;
+  /* centers vertically (optional) */
+  text-align: center;
+  /* centers the text itself */
   width: 100%;
 }
 
@@ -357,14 +406,14 @@ transform: rotate(360deg);
 /* style table in which archive is displayed */
 .archiveTable {
   width: 90%;
-  border-collapse:collapse;
+  border-collapse: collapse;
 }
 
 /* style archive table cells */
 .archiveTable td {
   padding: 3px;
   vertical-align: center;
-  
+
 }
 
 /* style table cell in which page title is displayed */
@@ -385,12 +434,13 @@ transform: rotate(360deg);
 
 /* style the thumbnails on the archive page */
 .archiveCellThumb {
-    width: 500px;
-    max-width: 60px;
+  width: 500px;
+  max-width: 60px;
 }
-.archiveCellThumb img{
-    max-width: 100%;
-  }
+
+.archiveCellThumb img {
+  max-width: 100%;
+}
 
 /* for left aligning the text in a table cell */
 .leftAlignTableText td {
@@ -449,7 +499,8 @@ transform: rotate(360deg);
 }
 
 .blogPostTitle h2 {
-  margin: 0; /* remove default h2 margin so it aligns cleanly with the icon */
+  margin: 0;
+  /* remove default h2 margin so it aligns cleanly with the icon */
 }
 
 .blogPost ws-widget[type="reactions"] {
@@ -520,7 +571,8 @@ footer a:hover {
 }
 
 /* take away margins from the edges of the screen */
-html, body {
+html,
+body {
   margin: 0;
 }
 
@@ -547,11 +599,13 @@ ws-widget[type="comments"] {
   background-color: #C7C2BD;
   outline: 3px solid #000000;
   padding: 0 24px;
-  overflow: hidden; /* safety net against any remaining overflow */
+  overflow: hidden;
+  /* safety net against any remaining overflow */
 }
 
-.footerWidgetRow > * {
-  min-width: 0; /* allows grid items to shrink below their content's natural width */
+.footerWidgetRow>* {
+  min-width: 0;
+  /* allows grid items to shrink below their content's natural width */
 }
 
 .footerWidgetRow ws-widget {
@@ -561,18 +615,21 @@ ws-widget[type="comments"] {
 }
 
 .footerWidgetRow ws-widget[type="status"] {
-  justify-self: end; /* hug the status widget toward the socials box */
+  justify-self: end;
+  /* hug the status widget toward the socials box */
 }
 
 .footerWidgetRow ws-widget[type="lastfm"] {
-  justify-self: start; /* hug the lastfm widget toward the socials box */
+  justify-self: start;
+  /* hug the lastfm widget toward the socials box */
 }
 
 .footerLinksBox {
   display: inline-block;
   background-color: #C7C2BD;
   outline: 2px solid #000000;
-  padding: 12px 16px; /* second value now adds left/right space */
+  padding: 12px 16px;
+  /* second value now adds left/right space */
 }
 
 .discordSection img {
@@ -629,7 +686,8 @@ ws-widget[type="comments"] {
     max-width: 100%;
   }
 
-  .writeNavLeft, .writeNavRight {
+  .writeNavLeft,
+  .writeNavRight {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -671,7 +729,8 @@ ws-widget[type="comments"] {
     text-align: left;
   }
 
-  .leftPic, .rightPic {
+  .leftPic,
+  .rightPic {
     float: none;
     display: block;
     max-width: 100%;
