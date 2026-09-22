@@ -60,6 +60,15 @@ header img {
   text-align: center;
 }
 
+.title-icon {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.title-icon:hover {
+  transform: scale(1.1);
+}
+
 /* for pictures displayed to the left */
 .leftPic {
   clear: left;
@@ -181,6 +190,65 @@ header #nav {
   padding: 10px;
   position: relative;
   z-index: 10;
+}
+
+.nav-seal {
+transition: transform 0.3s ease;
+}
+
+.nav-seal:hover {
+transform: rotate(360deg);
+}
+
+/* DROPDOWN MENU STYLES */
+.dropdown, .sub-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  cursor: pointer;
+  font-family: 'Cherry Cream Soda', cursive;
+  text-decoration: underline;
+}
+
+.dropdown-content, .sub-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #C7C2BD;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  outline: 2px solid #000000;
+  z-index: 100;
+  text-align: left;
+}
+
+.dropdown-content a, .sub-dropdown-content a {
+  color: black;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+  font-size: 18px;
+}
+
+.dropdown-content a:hover, .sub-dropdown-content a:hover {
+  background-color: #54576B;
+  color: #DEC46A;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.sub-dropdown {
+  display: block;
+}
+
+.sub-dropdown:hover .sub-dropdown-content {
+  display: block;
+  position: absolute;
+  left: 100%;
+  top: 0;
 }
 
 /* HOMEPAGE */
