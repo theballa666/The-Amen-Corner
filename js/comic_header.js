@@ -9,25 +9,32 @@ document.querySelector(".writeHeader").innerHTML = `
             <a href="index.html"><img src="./img/greenseal.png" alt="A green seal" class="nav-seal" style="width:30px;height:30px;"/></a>
             <a href="index.html">HOME</a> |
             
-            <div class="dropdown">
-                <span class="dropbtn">COMICS ▾</span>
-                <div class="dropdown-content">
-                    <div class="sub-dropdown">
-                        <a href="archive.html">Ov Flask and Folly ▸</a>
-                        <div class="sub-dropdown-content">
-                            <a href="archive.html">Archive</a>
-                            <a href="characters.html">Characters</a>
-                            <a href="wip.html">WiPs.</a>
-                        </div>
-                        <a href="archive.html">Untitled Metal Comic ▸</a>
-                        <div class="sub-dropdown-content">
-                            <a href="skully.html">Archive</a>
-                            <a href="skully.html">Characters</a>
-                            <a href="skully.html">WiPs.</a>
-                        </div>
-                    </div>
-                </div>
-            </div> |
+<div class="dropdown">
+    <span class="dropbtn">COMICS ▾</span>
+    <div class="dropdown-content">
+        
+        <!-- First Comic: Ov Flask and Folly -->
+        <div class="sub-dropdown">
+            <a href="#">Ov Flask and Folly ▸</a>
+            <div class="sub-dropdown-content">
+                <a href="archive.html">Archive</a>
+                <a href="characters.html">Characters</a>
+                <a href="wip.html">WiPs.</a>
+            </div>
+        </div>
+
+        <!-- Second Comic: Untitled Metal Comic -->
+        <div class="sub-dropdown">
+            <a href="#">Untitled Metal Comic ▸</a>
+            <div class="sub-dropdown-content">
+                <a href="skully.html">Archive</a>
+                <a href="skully.html">Characters</a>
+                <a href="skully.html">WiPs.</a>
+            </div>
+        </div>
+
+    </div>
+</div>
 
             <a href="about.html">ABOUT</a> |
             <a href="blog.html">BLOG</a> |
@@ -57,7 +64,7 @@ window.addEventListener('DOMContentLoaded', () => {
             leftAnchor.id = 'linkIconLeft';
             leftAnchor.href = 'characters.html';
             leftAnchor.innerHTML = '<img id="titleIconLeft" class="title-icon" alt="Character icon" style="width:50px;height:50px;"/>';
-            
+
             const rightAnchor = document.createElement('a');
             rightAnchor.id = 'linkIconRight';
             rightAnchor.href = 'characters.html';
@@ -83,7 +90,7 @@ window.addEventListener('DOMContentLoaded', () => {
         img.alt = character.alt;
         img.onmouseover = () => { img.src = character.hover; };
         img.onmouseout = () => { img.src = character.normal; };
-        
+
         // If we are on characters.html, link to anchor. Otherwise, link to characters.html#[name]
         const isCharsPage = window.location.pathname.includes('characters.html');
         link.href = isCharsPage ? `#${character.name}` : `characters.html#${character.name}`;

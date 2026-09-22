@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,10 +21,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="img/opalfavicon.png" />
 </head>
+
 <body align="center">
 
-<!-- header -->
-<div class="writeHeader"></div>
+    <!-- header -->
+    <div class="writeHeader"></div>
 
     <div class="subPage clearfix" align="center">
         <div class="archiveTitleRow">
@@ -36,64 +38,48 @@
             </div>
         </div>
 
-<script>
-  const iconPool = [
-    { normal: "./img/christophfavicon.png", hover: "./img/christoph_shockedfavicon.png", alt: "Christoph icon" },
-    { normal: "./img/opalfavicon.png", hover: "./img/opalsmilefavicon.png", alt: "Opal icon" },
-    { normal: "./img/faolanfavicon.png", hover: "./img/faolan_winkfavicon.png", alt: "Faolán icon" }
-    // add more characters here as you create their icons
-];
+        <script>
 
-function applyIcon(imgId, character) {
-    const img = document.getElementById(imgId);
-    img.src = character.normal;
-    img.alt = character.alt;
-    img.onmouseover = () => { img.src = character.hover; };
-    img.onmouseout = () => { img.src = character.normal; };
-}
+        </script>
 
-const shuffled = [...iconPool].sort(() => Math.random() - 0.5);
-applyIcon("titleIconLeft", shuffled[0]);
-applyIcon("titleIconRight", shuffled[1]);
-</script>
-
-    <p>Things that aren't or won't be finished.</p>
+        <p>Things that aren't or won't be finished.</p>
+        <hr />
         <table class="charTable">
             <!-- Leona -->
             <tr>
                 <td>
-                <img src="img/misc/troop.png" alt="Leona and horse" class="rightPic" width="65%"/>
-                <h5>Leona</h5>
-                <p>And horse.</p>
+                    <img src="img/misc/troop.png" alt="Leona and horse" class="rightPic" width="65%" />
+                    <h5>Leona</h5>
+                    <p>And horse.</p>
                 </td>
             </tr>
 
             <!-- Fionn -->
             <tr>
                 <td>
-                <img src="img/misc/duatigak2.png" alt="Fionn and hammer" class="rightPic" width="65%"/>
-                <h5>Fionnán</h5>
-                <p>And hammer.</p>
+                    <img src="img/misc/duatigak2.png" alt="Fionn and hammer" class="rightPic" width="65%" />
+                    <h5>Fionnán</h5>
+                    <p>And hammer.</p>
                 </td>
             </tr>
 
             <!-- Opal spark -->
             <tr>
                 <td>
-                <img src="img/misc/spark.png" alt="hot hot hot" class="rightPic" width="65%"/>
-                <h5>Flash Incinerate</h5>
-                <p>That's hot.</p>
+                    <img src="img/misc/spark.png" alt="hot hot hot" class="rightPic" width="65%" />
+                    <h5>Flash Incinerate</h5>
+                    <p>That's hot.</p>
                 </td>
             </tr>
         </table>
-</div>
+    </div>
 
-<!-- footer -->
-<div class="writeFooter"></div>
+    <!-- footer -->
+    <div class="writeFooter"></div>
 
-<!-- at the end of this page we only call the header and footer scripts, because we don't need use any functions from the other scripts. -->
-<script src="js/comic_header.js" defer></script>
-<script src="js/comic_footer.js" defer></script>
+    <!-- at the end of this page we only call the header and footer scripts, because we don't need use any functions from the other scripts. -->
+    <script src="js/comic_header.js" defer></script>
+    <script src="js/comic_footer.js" defer></script>
 </body>
 
 </html>
