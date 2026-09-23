@@ -35,27 +35,8 @@ document.querySelector(".writeFooter").innerHTML = `
 
         <div class="footerWidgetRow footerBottomRow">
             <div class="footerWidgetSlot">
-                <style>
-                    #gr_updates_widget{
-                        border-radius: 4px;
-                        background-color:#fff;
-                        border:solid #683205 3px;
-                        box-shadow: 0px 0px 4px 1px #595959, inset 0px 0px 0px 1px #7D730B;
-                        padding:4px;
-                        width:100%;
-                        box-sizing: border-box;
-                    }
-                    #gr_updates_widget iframe{
-                        width: 100%;
-                        height: 150px;
-                        display: block;
-                        border: none;
-                    }
-                </style>
-                <div id="gr_updates_widget">
-                    <iframe sandbox id="the_iframe" src="https://goodreads.com/widgets/user_update_widget?height=150&num_updates=2&user=151275369&width=330" frameborder="0"></iframe>
-                </div>
-            </div>
+    <!-- Widget slot open — replacement coming -->
+</div>
 
             <div class="footerWidgetSlotCenter">
                 <!-- Widget 3 goes here, e.g. <ws-widget type="..." iid="..."></ws-widget> -->
