@@ -106,7 +106,7 @@ document.querySelector(".writeFooter").innerHTML = `
                 </style>
                 <div id="gr_grid_widget_1790166861">
                     <h2>
-                        <a style="text-decoration: none;" rel="nofollow" href="https://www.goodreads.com/review/list/151275369-mister-anderson?shelf=currently-reading&utm_medium=api&utm_source=grid_widget">Mister Anderson's currently-reading book montage</a>
+                        <a style="text-decoration: none;" rel="nofollow" href="https://www.goodreads.com/review/list/151275369-mister-anderson?shelf=currently-reading&utm_medium=api&utm_source=grid_widget">Currently reading</a>
                     </h2>
                     <div class="gr_grid_container">
                         <div class="gr_grid_book_container"><a title="The Lord of the Rings (The Lord of the Rings, #1-3)" rel="nofollow" href="https://www.goodreads.com/book/show/33.The_Lord_of_the_Rings"><img alt="The Lord of the Rings" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1566425108l/33._SX50_.jpg" /></a></div>
