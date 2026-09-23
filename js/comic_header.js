@@ -14,24 +14,40 @@ document.querySelector(".writeHeader").innerHTML = `
     <div class="dropdown-content">
         
         <!-- First Comic: Ov Flask and Folly -->
-        <div class="sub-dropdown">
-            <a href="#">Ov Flask and Folly ▸</a>
-            <div class="sub-dropdown-content">
-                <a href="archive.html">Archive</a>
-                <a href="characters.html">Characters</a>
-                <a href="wip.html">WiPs.</a>
-            </div>
-        </div>
+<div class="sub-dropdown">
+<a href="archive.html"
+   onmouseover="this.querySelector('.comicMenuIcon').src='./img/opalsmilefavicon.png';"
+   onmouseout="this.querySelector('.comicMenuIcon').src='./img/opalfavicon.png';">
+    <span class="comicMenuLabel">
+        <img src="./img/opalfavicon.png" alt="" class="comicMenuIcon" />
+        Ov Flask and Folly
+    </span>
+    <span class="subArrow">▸</span>
+</a>
+    <div class="sub-dropdown-content">
+        <a href="archive.html">Archive</a>
+        <a href="characters.html">Characters</a>
+        <a href="wip.html">WiPs.</a>
+    </div>
+</div>
 
-        <!-- Second Comic: Untitled Metal Comic -->
-        <div class="sub-dropdown">
-            <a href="#">Untitled Metal Comic ▸</a>
-            <div class="sub-dropdown-content">
-                <a href="skully.html">Archive</a>
-                <a href="skully.html">Characters</a>
-                <a href="skully.html">WiPs.</a>
-            </div>
-        </div>
+<!-- Second Comic: Straight Haze -->
+<div class="sub-dropdown">
+<a href="metal-archive.html"
+   onmouseover="this.querySelector('.comicMenuIcon').src='./img/metal_whoa.png';"
+   onmouseout="this.querySelector('.comicMenuIcon').src='./img/metal.png';">
+    <span class="comicMenuLabel">
+        <img src="./img/metal.png" alt="" class="comicMenuIcon" />
+        Straight Haze
+    </span>
+    <span class="subArrow">▸</span>
+</a>
+    <div class="sub-dropdown-content">
+        <a href="metal-archive.html">Archive</a>
+        <a href="metal-characters.html">Characters</a>
+        <a href="metal-wip.html">WiPs.</a>
+    </div>
+</div>
 
     </div>
 </div>
@@ -75,13 +91,29 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    const iconPool = [
-        { name: "christoph", normal: "./img/christophfavicon.png", hover: "./img/christoph_shockedfavicon.png", alt: "Christoph icon" },
-        { name: "opal", normal: "./img/opalfavicon.png", hover: "./img/opalsmilefavicon.png", alt: "Opal icon" },
-        { name: "faolan", normal: "./img/faolanfavicon.png", hover: "./img/faolan_winkfavicon.png", alt: "Faolán icon" }
-    ];
+    //icon pools, grouped by comic series, plus which characters page each links back to
+    const iconPools = {
+        ofaf: {
+            charactersPage: "characters.html",
+            icons: [
+                { name: "christoph", normal: "./img/christophfavicon.png", hover: "./img/christoph_shockedfavicon.png", alt: "Christoph icon" },
+                { name: "opal", normal: "./img/opalfavicon.png", hover: "./img/opalsmilefavicon.png", alt: "Opal icon" },
+                { name: "faolan", normal: "./img/faolanfavicon.png", hover: "./img/faolan_winkfavicon.png", alt: "Faolán icon" }
+            ]
+        },
+        straightHaze: {
+            charactersPage: "metal-characters.html",
+            icons: [
+                { name: "metal", normal: "./img/metal.png", hover: "./img/metal_whoa.png", alt: "Straight Haze icon" }
+            ]
+        }
+    };
 
-    function applyIcon(imgId, linkId, character) {
+    //figure out which comic's pages we're on
+    const isStraightHazePage = window.location.pathname.includes('metal-');
+    const activePool = isStraightHazePage ? iconPools.straightHaze : iconPools.ofaf;
+
+    function applyIcon(imgId, linkId, character, charactersPage) {
         const img = document.getElementById(imgId);
         const link = document.getElementById(linkId);
         if (!img || !link) return;
@@ -91,12 +123,21 @@ window.addEventListener('DOMContentLoaded', () => {
         img.onmouseover = () => { img.src = character.hover; };
         img.onmouseout = () => { img.src = character.normal; };
 
-        // If we are on characters.html, link to anchor. Otherwise, link to characters.html#[name]
-        const isCharsPage = window.location.pathname.includes('characters.html');
-        link.href = isCharsPage ? `#${character.name}` : `characters.html#${character.name}`;
+        const isCharsPage = window.location.pathname.includes(charactersPage);
+        link.href = isCharsPage ? `#${character.name}` : `${charactersPage}#${character.name}`;
     }
 
-    const shuffled = [...iconPool].sort(() => Math.random() - 0.5);
-    applyIcon("titleIconLeft", "linkIconLeft", shuffled[0]);
-    applyIcon("titleIconRight", "linkIconRight", shuffled[1]);
+    //pick two icons for left/right; reuse the single icon on both sides if the pool doesn't have two yet
+    let leftIcon, rightIcon;
+    if (activePool.icons.length >= 2) {
+        const shuffled = [...activePool.icons].sort(() => Math.random() - 0.5);
+        leftIcon = shuffled[0];
+        rightIcon = shuffled[1];
+    } else {
+        leftIcon = activePool.icons[0];
+        rightIcon = activePool.icons[0];
+    }
+
+    applyIcon("titleIconLeft", "linkIconLeft", leftIcon, activePool.charactersPage);
+    applyIcon("titleIconRight", "linkIconRight", rightIcon, activePool.charactersPage);
 });

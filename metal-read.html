@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10">
-    <title>The Amen Corner | Home</title>
+    <title>The Amen Corner | Straight Haze - Read</title>
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&display=swap" rel="stylesheet">
@@ -16,16 +16,30 @@
 <div class="pageWrap">
     <div class="writeHeader"></div>
 
-    <div class="subPage clearfix" align="center">
-        <h1>Latest Comics</h1>
-        <p>Catch up on the newest pages.</p>
-        <hr />
-        <div class="writeLatestComics"></div>
+    <div id="showComic">
+        <div class="writePageTitle"></div>
+        <div class="writePageDate"></div>
+
+        <div class="comicRow">
+            <div class="writeNavLeft"></div>
+            <div class="writePageClickable"></div>
+            <div class="writeNavRight"></div>
+        </div>
+
+        <div class="writeReactions"></div>
+        <div class="writeComments"></div>
+        <div class="writeNav"></div>
     </div>
 
-    <div class="writeFooter"></div>
+  <div id="authorNotes">
+    <h2>Author Notes</h2>
+    <div class="writeAuthorNotes"></div>
+  </div>
 
-    <script src="js/comic_latest.js" defer></script>
+<div class="writeFooter"></div>
+
+    <script src="js/metal_settings.js" defer></script>
+    <script src="js/comic_show.js" defer></script>
     <script src="js/comic_header.js" defer></script>
     <script src="js/comic_footer.js" defer></script>
   </body>

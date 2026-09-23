@@ -230,7 +230,18 @@ header #nav {
   transform: rotate(360deg);
 }
 
+.comicMenuLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
+.comicMenuIcon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
 
 /* DROPDOWN MENU STYLES */
 .dropdown {
@@ -263,10 +274,13 @@ header #nav {
 
 .sub-dropdown-content {
   display: none;
-  position: relative;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 160px;
   background-color: #b5b0ab;
-  outline: none;
+  outline: 2px solid #000000;
+  box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.25);
   z-index: 101;
   text-align: left;
 }
@@ -304,6 +318,22 @@ header #nav {
   display: block;
 }
 
+.sub-dropdown > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sub-dropdown > a .subArrow {
+  transition: transform 0.2s ease;
+}
+
+.sub-dropdown:hover > a .subArrow {
+  transform: translateX(3px);
+  color: #DEC46A;
+}
+
 /* On mobile/narrow screens, make sub-dropdown stack underneath instead of flying out to the right */
 @media screen and (max-width: 768px) {
   .sub-dropdown-content {
@@ -316,6 +346,64 @@ header #nav {
 }
 
 /* HOMEPAGE */
+
+/* LATEST COMICS (homepage) */
+.writeLatestComics {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  max-width: 1000px;
+}
+
+.latestComicCard {
+  display: block;
+  width: 440px;
+  max-width: 100%;
+  text-decoration: none;
+  color: #000000;
+  background-color: #C7C2BD;
+  outline: 3px solid #DEC46A;
+  padding: 12px;
+  transition: transform 0.2s ease, outline-color 0.2s ease;
+}
+
+.latestComicCard h2 {
+  margin: 0 0 8px;
+  font-size: 1.3em;
+}
+
+.latestComicCard:hover {
+  transform: scale(1.02);
+  outline-color: #54576B;
+}
+
+.latestComicCard img {
+  display: block;
+  width: 100%;
+  height: auto;
+  outline: 2px solid #000000;
+}
+
+.latestComicCard h3 {
+  margin: 10px 0 2px;
+}
+
+.latestComicDate {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9em;
+  color: #421a1a;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .writeLatestComics {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 /* style nav button images */
 .comicNav {
