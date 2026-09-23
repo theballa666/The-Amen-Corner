@@ -728,6 +728,11 @@ footer a:hover {
   color: #868d26
 }
 
+.footerTagline {
+  font-size: 12px !important;
+  margin: 0 0 10px;
+}
+
 .guestbookFrame {
   width: 100%;
   max-width: 1000px;
@@ -800,6 +805,48 @@ ws-widget[type="comments"] {
   padding: 0 24px;
   overflow: hidden;
   /* safety net against any remaining overflow */
+}
+
+.footerBottomRow {
+  margin-top: 16px;
+}
+
+.footerWidgetSlot {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:root {
+  --footer-middle-col: 210px; /* shared width for both rows' middle column — nudge this if the left widget's edge doesn't line up with the row above it */
+}
+
+.footerLinksBox {
+  width: var(--footer-middle-col);
+  box-sizing: border-box;
+}
+
+.footerWidgetSlotCenter {
+  width: var(--footer-middle-col);
+  box-sizing: border-box;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.poweredByBoxSmall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin: 4px auto 10px;
+}
+
+.poweredByBoxSmall p {
+  margin: 0;
+  font-size: 11px;
 }
 
 .footerWidgetRow>* {
