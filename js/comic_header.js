@@ -24,7 +24,7 @@ document.querySelector(".writeHeader").innerHTML = `
     <div class="sub-dropdown-content">
         <a href="archive.html">Archive</a>
         <a href="characters.html">Characters</a>
-        <a href="wip.html">WiPs.</a>
+        <a href="wip.html">Gallery</a>
     </div>
 </div>
 
@@ -42,7 +42,7 @@ document.querySelector(".writeHeader").innerHTML = `
     <div class="sub-dropdown-content">
         <a href="metal-archive.html">Archive</a>
         <a href="metal-characters.html">Characters</a>
-        <a href="metal-wip.html">WiPs.</a>
+        <a href="metal-wip.html">Gallery</a>
     </div>
 </div>
 

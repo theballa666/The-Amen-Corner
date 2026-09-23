@@ -41,6 +41,7 @@ document.querySelector(".writeFooter").innerHTML = `
         </div>
         <p><strong>Powered by</strong></p>
         <a href="https://rarebit.neocities.org"><img src="img/rarebitlogo_small.png" height = "30" /></a>
+        <p>Est. 2026</p>
 
         <a href="#" id="backToTop" class="back-to-top">
         <img src="img/greenseal.png" alt="Top" style="width:20px;height:20px;" /> TOP ↑
