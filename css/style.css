@@ -490,6 +490,7 @@ header hr {
   display: block;
   width: 440px;
   max-width: 100%;
+  box-sizing: border-box; /* ensures padding and borders don't push the width past 100% */
   text-decoration: none;
   color: #000000;
   background-color: #C7C2BD;
@@ -530,6 +531,13 @@ header hr {
   .writeLatestComics {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 8px; /* adds a safety buffer so the cards never touch the absolute screen edges */
+  }
+
+  .latestComicCard {
+    width: 100%; /* forces the cards to cleanly fill the constrained container without overflowing */
   }
 }
 
