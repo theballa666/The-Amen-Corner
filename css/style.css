@@ -18,8 +18,8 @@ body {
 
 /* header image */
 header img {
-  width: 500px;
-  max-width: 98%;
+  width: 420px; /* slightly scale down the giant logo banner */
+  margin-bottom: -4px; /* pulls the nav bar up closer to the logo */
 }
 
 /* clearfix hack to prevent image overflow. check out the W3Schools page on it. */
@@ -262,6 +262,11 @@ a:hover {
 }
 
 /* HEADER */
+
+header {
+  padding-bottom: 0px;
+}
+
 header #nav {
   background-color: #C7C2BD;
   outline: 3px solid #000000;
@@ -271,10 +276,17 @@ header #nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
+  min-height: 40px;
   gap: 16px;
   flex-wrap: wrap;
+  padding: 4px 0;
+  margin-bottom: 4px;
   /* added */
+}
+
+header hr {
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 #nav a {
@@ -293,13 +305,18 @@ header #nav {
 }
 
 .disclaimer {
-  margin-top: 12px;
+  margin-top: 4px;
   display: block;
   width: 100%;
   text-align: center;
-  padding: 10px;
+  padding: 4px 10px;
   position: relative;
   z-index: 10;
+  font-size: 0.9em;
+}
+
+.disclaimer p {
+  margin: 2px 0; /* tightens paragraph gaps inside disclaimer */
 }
 
 .nav-seal {
