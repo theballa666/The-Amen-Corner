@@ -1,6 +1,3 @@
-//the header of the site would be handled in this javascript file, so you don't have to copypaste the whole thing onto every page.
-//at the bottom of your page, but before the js script calls and the closing body tag, put an empty div with a class of "writeHeader"
-
 document.querySelector(".writeHeader").innerHTML = `
     <header align="center">
         <a href="index.html"><img src="./img/logo.gif" alt="" /></a> 
@@ -13,8 +10,7 @@ document.querySelector(".writeHeader").innerHTML = `
     <span class="dropbtn">COMICS ▾</span>
     <div class="dropdown-content">
         
-        <!-- First Comic: Ov Flask and Folly -->
-<div class="sub-dropdown">
+        <div class="sub-dropdown">
 <a href="archive.html"
    onmouseover="this.querySelector('.comicMenuIcon').src='./img/opalsmilefavicon.png';"
    onmouseout="this.querySelector('.comicMenuIcon').src='./img/opalfavicon.png';">
@@ -31,7 +27,6 @@ document.querySelector(".writeHeader").innerHTML = `
     </div>
 </div>
 
-<!-- Second Comic: Straight Haze -->
 <div class="sub-dropdown">
 <a href="metal-archive.html"
    onmouseover="this.querySelector('.comicMenuIcon').src='./img/metal_whoa.png';"
@@ -67,12 +62,30 @@ document.querySelector(".writeHeader").innerHTML = `
     </header>
 `;
 
-// Global Header Character Icon Script
 window.addEventListener('DOMContentLoaded', () => {
+    // Mobile dropdown toggle handling
+    const dropbtn = document.querySelector('.dropbtn');
+    const dropdown = document.querySelector('.dropdown');
+
+    if (dropbtn && dropdown) {
+        dropbtn.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.stopPropagation();
+                dropdown.classList.toggle('mobile-open');
+            }
+        });
+
+        // Close dropdown when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && !dropdown.contains(e.target)) {
+                dropdown.classList.remove('mobile-open');
+            }
+        });
+    }
+
     const titleRow = document.querySelector('.archiveTitleRow');
     if (!titleRow) return;
 
-    // Inject the left and right icon anchor tags if they don't already exist
     if (!document.getElementById('linkIconLeft')) {
         const h1 = titleRow.querySelector('h1');
         if (h1) {
@@ -91,7 +104,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    //icon pools, grouped by comic series, plus which characters page each links back to
     const iconPools = {
         ofaf: {
             charactersPage: "characters.html",
@@ -109,7 +121,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    //figure out which comic's pages we're on
     const isStraightHazePage = window.location.pathname.includes('metal-');
     const activePool = isStraightHazePage ? iconPools.straightHaze : iconPools.ofaf;
 
@@ -127,7 +138,6 @@ window.addEventListener('DOMContentLoaded', () => {
         link.href = isCharsPage ? `#${character.name}` : `${charactersPage}#${character.name}`;
     }
 
-    //pick two icons for left/right; reuse the single icon on both sides if the pool doesn't have two yet
     let leftIcon, rightIcon;
     if (activePool.icons.length >= 2) {
         const shuffled = [...activePool.icons].sort(() => Math.random() - 0.5);

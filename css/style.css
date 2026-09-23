@@ -363,6 +363,40 @@ header #nav {
   color: #DEC46A;
 }
 
+/* Add these rules to style.css */
+
+@media screen and (max-width: 768px) {
+  /* Disable hover triggers on mobile */
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .sub-dropdown:hover .sub-dropdown-content {
+    display: none;
+  }
+
+  /* Show content only when the parent container has the mobile-open class toggled via JS */
+  .dropdown.mobile-open .dropdown-content {
+    display: block;
+    position: relative;
+    top: 0;
+    width: 100%;
+    box-shadow: none;
+    outline: none;
+    border-top: 2px solid #000000;
+  }
+
+  /* Automatically expand sub-dropdowns inside the open mobile menu so sub-links are directly visible */
+  .dropdown.mobile-open .sub-dropdown-content {
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    outline: none;
+    border-top: 1px solid #000000;
+  }
+}
+
 /* On mobile/narrow screens, make sub-dropdown stack underneath instead of flying out to the right */
 @media screen and (max-width: 768px) {
   .sub-dropdown-content {
