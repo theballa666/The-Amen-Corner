@@ -82,6 +82,35 @@ footer,
   transform: scale(1.1);
 }
 
+/* background */
+
+body {
+  position: relative; /* anchors the side panels below */
+  min-height: 100vh;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 300px;              /* adjust to whatever width your side art needs */
+  background-color: #4a4e63; /* TEMP placeholder color — swap for an image below */
+  z-index: -1;                /* stays behind your header/subPage content */
+}
+
+body::before { left: 0; }
+body::after  { right: 0; }
+
+/* hide them on mobile so they don't fight with the single-column layout */
+@media screen and (max-width: 700px) {
+  body::before,
+  body::after {
+    display: none;
+  }
+}
+
 /* for pictures displayed to the left */
 .leftPic {
   clear: left;

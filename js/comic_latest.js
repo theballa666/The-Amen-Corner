@@ -18,7 +18,7 @@ const comicSeriesData = [
     {
         seriesName: "Straight Haze",
         latestPage: 3,
-        latestTitle: "Page 3", //update once this page has a real title
+        latestTitle: "Temporary Substitute: Last, But Not Least", //update once this page has a real title
         thumbFolder: "img/metalthumbs",
         image: "pg",
         thumbExt: "png",
