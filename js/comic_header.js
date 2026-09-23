@@ -7,10 +7,11 @@ document.querySelector(".writeHeader").innerHTML = `
             <a href="index.html">HOME</a> |
             
 <div class="dropdown">
-    <span class="dropbtn">COMICS ▾</span>
+    <span class="dropbtn" tabindex="0">COMICS ▾</span>
     <div class="dropdown-content">
         
-        <div class="sub-dropdown">
+        <!-- First Comic: Ov Flask and Folly -->
+<div class="sub-dropdown">
 <a href="archive.html"
    onmouseover="this.querySelector('.comicMenuIcon').src='./img/opalsmilefavicon.png';"
    onmouseout="this.querySelector('.comicMenuIcon').src='./img/opalfavicon.png';">
@@ -27,6 +28,7 @@ document.querySelector(".writeHeader").innerHTML = `
     </div>
 </div>
 
+<!-- Second Comic: Straight Haze -->
 <div class="sub-dropdown">
 <a href="metal-archive.html"
    onmouseover="this.querySelector('.comicMenuIcon').src='./img/metal_whoa.png';"
@@ -63,20 +65,19 @@ document.querySelector(".writeHeader").innerHTML = `
 `;
 
 window.addEventListener('DOMContentLoaded', () => {
-    // Mobile dropdown toggle handling
-    const dropbtn = document.querySelector('.dropbtn');
     const dropdown = document.querySelector('.dropdown');
+    const dropbtn = document.querySelector('.dropbtn');
 
-    if (dropbtn && dropdown) {
-        dropbtn.addEventListener('click', (e) => {
+    if (dropdown && dropbtn) {
+        dropbtn.addEventListener('pointerdown', (e) => {
             if (window.innerWidth <= 768) {
+                e.preventDefault();
                 e.stopPropagation();
                 dropdown.classList.toggle('mobile-open');
             }
         });
 
-        // Close dropdown when clicking outside on mobile
-        document.addEventListener('click', (e) => {
+        document.addEventListener('pointerdown', (e) => {
             if (window.innerWidth <= 768 && !dropdown.contains(e.target)) {
                 dropdown.classList.remove('mobile-open');
             }

@@ -366,7 +366,6 @@ header #nav {
 /* Add these rules to style.css */
 
 @media screen and (max-width: 768px) {
-  /* Disable hover triggers on mobile */
   .dropdown:hover .dropdown-content {
     display: none;
   }
@@ -375,7 +374,6 @@ header #nav {
     display: none;
   }
 
-  /* Show content only when the parent container has the mobile-open class toggled via JS */
   .dropdown.mobile-open .dropdown-content {
     display: block;
     position: relative;
@@ -386,7 +384,6 @@ header #nav {
     border-top: 2px solid #000000;
   }
 
-  /* Automatically expand sub-dropdowns inside the open mobile menu so sub-links are directly visible */
   .dropdown.mobile-open .sub-dropdown-content {
     display: block;
     position: relative;
