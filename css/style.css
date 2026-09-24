@@ -128,23 +128,23 @@ body {
 body::before,
 body::after {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
-  bottom: 0;
-  width: 300px;
-  /* adjust to whatever width your side art needs */
+  height: 100vh;
+  box-sizing: border-box;
+  width: max(0px, calc((100% - 1000px) / 2));
   background-color: #4a4e63;
-  /* TEMP placeholder color — swap for an image below */
   z-index: -1;
-  /* stays behind your header/subPage content */
 }
 
 body::before {
   left: 0;
+  border-right: 3px solid #000000;
 }
 
 body::after {
   right: 0;
+  border-left: 3px solid #000000;
 }
 
 /* hide them on mobile so they don't fight with the single-column layout */
@@ -210,6 +210,33 @@ body::after {
   color: #421a1a;
 }
 
+/* YEAR / MONTH GROUPING (blog jump box) */
+.blogIndexSection h3 {
+  margin: 10px 0 4px;
+  padding-top: 8px;
+  border-top: 1px solid #00000022;
+  font-family: 'Cherry Cream Soda', cursive;
+  font-size: 1.05em;
+  color: #421a1a;
+}
+
+.blogIndexSection h3:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.blogIndexMonth {
+  margin-left: 12px;
+}
+
+.blogIndexMonth h4 {
+  margin: 6px 0 4px;
+  font-family: 'Cherry Cream Soda', cursive;
+  font-size: 0.95em;
+  color: #421a1a;
+}
+
 .charIndexSection ul {
   list-style: none;
   margin: 0;
@@ -240,6 +267,11 @@ body::after {
 .charIndex a:hover {
   background-color: #54576B;
   color: #DEC46A;
+}
+
+/* single-column override for the blog's jump box */
+.blogIndexSection ul {
+  column-count: 1;
 }
 
 /* WIP / GALLERY PAGES */
@@ -418,6 +450,7 @@ header #nav {
   outline: 3px solid #000000;
   font-size: 20px;
   width: 98%;
+  max-width: 1000px;   /* NEW — caps it at the same width as .subPage */
   margin: auto;
   display: flex;
   align-items: center;
@@ -427,12 +460,10 @@ header #nav {
   flex-wrap: wrap;
   padding: 4px 0;
   margin-bottom: 4px;
-  /* added */
 }
 
 header hr {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  display: none;
 }
 
 #nav a {
@@ -464,6 +495,16 @@ header hr {
 .disclaimer p {
   margin: 2px 0;
   /* tightens paragraph gaps inside disclaimer */
+}
+
+.ageWarning {
+  display: block;
+  max-width: 1000px;
+  margin: 10px auto 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 0.7em;
 }
 
 .nav-seal {
@@ -945,6 +986,22 @@ header hr {
   /* remove default h2 margin so it aligns cleanly with the icon */
 }
 
+/* funny hover effect + click-to-top on blog post seals */
+.blogPostTitle img.blogSealTop {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.blogPostTitle img.blogSealTop:hover {
+  animation: sealWiggle 0.4s ease-in-out infinite;
+}
+
+@keyframes sealWiggle {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25%      { transform: rotate(-18deg) scale(1.15); }
+  75%      { transform: rotate(18deg) scale(1.15); }
+}
+
 .blogPost ws-widget[type="reactions"] {
   margin: 8px 0 0;
 }
@@ -973,7 +1030,7 @@ footer a:hover {
 
 .footerTagline {
   font-size: 12px !important;
-  margin: 0 0 10px;
+  margin: 10px 0 0;
 }
 
 .guestbookFrame {

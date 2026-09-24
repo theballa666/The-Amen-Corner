@@ -77,8 +77,9 @@ document.querySelector(".writeHeader").innerHTML = `
         <div class="disclaimer">
            <p>Disclaimer: This site is designed for desktop. Get on the computer, now!</p>
            <p>🏗️ Currently under construction. 🏗️</p>
-           <small>While this is not explicitly an adult site, if you are under the age of 18, you should be doing something else. Like killing people in Grand Theft Auto.</small>
         </div>
+
+        <small class="ageWarning">While this is not explicitly an adult site, if you are under the age of 18, you should be doing something else. Like killing people in Grand Theft Auto.</small>
 
         <hr>
     </header>
