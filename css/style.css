@@ -18,8 +18,10 @@ body {
 
 /* header image */
 header img {
-  width: 420px; /* slightly scale down the giant logo banner */
-  margin-bottom: -4px; /* pulls the nav bar up closer to the logo */
+  width: 420px;
+  /* slightly scale down the giant logo banner */
+  margin-bottom: -4px;
+  /* pulls the nav bar up closer to the logo */
 }
 
 /* clearfix hack to prevent image overflow. check out the W3Schools page on it. */
@@ -99,7 +101,8 @@ body {
   left: 0;
   width: 32px;
   height: 32px;
-  background-size: contain; /* was: cover */
+  background-size: contain;
+  /* was: cover */
   background-repeat: no-repeat;
   pointer-events: none;
   z-index: 9999;
@@ -108,14 +111,17 @@ body {
 
 /* enforce custom cursor everywhere — must stay last / use !important so no other
    rule (existing or future) can bring back the native OS cursor */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   cursor: none !important;
 }
 
 /* background */
 
 body {
-  position: relative; /* anchors the side panels below */
+  position: relative;
+  /* anchors the side panels below */
   min-height: 100vh;
 }
 
@@ -125,16 +131,25 @@ body::after {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 300px;              /* adjust to whatever width your side art needs */
-  background-color: #4a4e63; /* TEMP placeholder color — swap for an image below */
-  z-index: -1;                /* stays behind your header/subPage content */
+  width: 300px;
+  /* adjust to whatever width your side art needs */
+  background-color: #4a4e63;
+  /* TEMP placeholder color — swap for an image below */
+  z-index: -1;
+  /* stays behind your header/subPage content */
 }
 
-body::before { left: 0; }
-body::after  { right: 0; }
+body::before {
+  left: 0;
+}
+
+body::after {
+  right: 0;
+}
 
 /* hide them on mobile so they don't fight with the single-column layout */
 @media screen and (max-width: 700px) {
+
   body::before,
   body::after {
     display: none;
@@ -232,7 +247,7 @@ body::after  { right: 0; }
   margin-bottom: 40px;
 }
 
-.wipSection > p {
+.wipSection>p {
   margin-top: -4px;
   margin-bottom: 16px;
   opacity: 0.85;
@@ -259,7 +274,8 @@ body::after  { right: 0; }
   height: auto;
   margin-bottom: 8px;
   outline: 2px solid #00000022;
-  transition: max-width 0.3s ease;   /* NEW - animates the image growing */
+  transition: max-width 0.3s ease;
+  /* NEW - animates the image growing */
 }
 
 .galleryItem h5 {
@@ -279,11 +295,13 @@ body::after  { right: 0; }
 
 .galleryItem.expanded {
   grid-column: 1 / -1;
-  order: -1;                          /* NEW - moves the clicked box to the front */
+  order: -1;
+  /* NEW - moves the clicked box to the front */
 }
 
 .galleryItem.expanded img {
-  max-width: 1000px;                   /* bumped up from 300px so the grow is noticeable */
+  max-width: 1000px;
+  /* bumped up from 300px so the grow is noticeable */
   margin-left: auto;
   margin-right: auto;
 }
@@ -444,7 +462,8 @@ header hr {
 }
 
 .disclaimer p {
-  margin: 2px 0; /* tightens paragraph gaps inside disclaimer */
+  margin: 2px 0;
+  /* tightens paragraph gaps inside disclaimer */
 }
 
 .nav-seal {
@@ -529,7 +548,7 @@ header hr {
   background-color: #b5b0ab;
 }
 
-.dropdown-content a:hover, 
+.dropdown-content a:hover,
 .sub-dropdown-content a:hover {
   background-color: #54576B;
   color: #DEC46A;
@@ -543,14 +562,14 @@ header hr {
   display: block;
 }
 
-.sub-dropdown > a {
+.sub-dropdown>a {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
 }
 
-.sub-dropdown > a .subArrow {
+.sub-dropdown>a .subArrow {
   transition: transform 0.2s ease;
 }
 
@@ -591,7 +610,7 @@ header hr {
   display: block;
 }
 
-.sub-sub-dropdown > a {
+.sub-sub-dropdown>a {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -599,16 +618,16 @@ header hr {
   cursor: default;
 }
 
-.sub-sub-dropdown > a .subArrow {
+.sub-sub-dropdown>a .subArrow {
   transition: transform 0.2s ease;
 }
 
-.sub-sub-dropdown:hover > a .subArrow {
+.sub-sub-dropdown:hover>a .subArrow {
   transform: translateX(3px);
   color: #DEC46A;
 }
 
-.sub-dropdown:hover > a .subArrow {
+.sub-dropdown:hover>a .subArrow {
   transform: translateX(3px);
   color: #DEC46A;
 }
@@ -646,6 +665,7 @@ header hr {
 
 /* On mobile/narrow screens, make sub-dropdown and sub-sub-dropdown stack underneath instead of flying out to the right */
 @media screen and (max-width: 768px) {
+
   .sub-dropdown-content,
   .sub-sub-dropdown-content {
     position: relative;
@@ -670,7 +690,8 @@ header hr {
 .writeLatestComics {
   display: flex;
   justify-content: center;
-  align-items: stretch; /* was flex-start — makes both cards match the tallest one */
+  align-items: stretch;
+  /* was flex-start — makes both cards match the tallest one */
   gap: 30px;
   flex-wrap: wrap;
   margin: 20px auto;
@@ -704,8 +725,10 @@ header hr {
 .latestComicCard img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3; /* pick whatever ratio matches your real thumbnails */
-  object-fit: cover;   /* crops to fill that ratio instead of stretching */
+  aspect-ratio: 4 / 3;
+  /* pick whatever ratio matches your real thumbnails */
+  object-fit: cover;
+  /* crops to fill that ratio instead of stretching */
   outline: 2px solid #000000;
 }
 
@@ -726,11 +749,13 @@ header hr {
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-    padding: 0 8px; /* adds a safety buffer so the cards never touch the absolute screen edges */
+    padding: 0 8px;
+    /* adds a safety buffer so the cards never touch the absolute screen edges */
   }
 
   .latestComicCard {
-    width: 100%; /* forces the cards to cleanly fill the constrained container without overflowing */
+    width: 100%;
+    /* forces the cards to cleanly fill the constrained container without overflowing */
   }
 }
 
@@ -965,7 +990,7 @@ footer a:hover {
 .back-to-top {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: max(20px, calc((100vw - 1000px) / 2 + 20px));
   background-color: #C7C2BD;
   color: #000000;
   padding: 8px 12px;
@@ -1037,7 +1062,8 @@ ws-widget[type="comments"] {
 }
 
 :root {
-  --footer-middle-col: 210px; /* shared width for both rows' middle column — nudge this if the left widget's edge doesn't line up with the row above it */
+  --footer-middle-col: 210px;
+  /* shared width for both rows' middle column — nudge this if the left widget's edge doesn't line up with the row above it */
 }
 
 .footerLinksBox {
@@ -1179,18 +1205,27 @@ ws-widget[type="comments"] {
   }
 
   .charRowInner {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    align-items: stretch;
+    /* must be stretch, not flex-start, or charBio never grows tall enough */
+    gap: 24px;
   }
 
   .charImageBlock {
-    width: 100%;
-    max-width: 350px;
+    flex-shrink: 0;
+    width: 350px;
+    /* margin-top: 45px;  ← remove this, it's no longer needed */
   }
 
   .charBio {
-    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* centers the whole group of <p> lines as one unit */
     text-align: left;
+    flex-grow: 1;
+    max-width: 650px;
+    padding: 10px;
   }
 
   .leftPic,
@@ -1202,4 +1237,3 @@ ws-widget[type="comments"] {
     margin: 0 auto 12px;
   }
 }
-
