@@ -25,6 +25,17 @@ document.querySelector(".writeHeader").innerHTML = `
         <a href="archive.html">Archive</a>
         <a href="characters.html">Characters</a>
         <a href="wip.html">Gallery</a>
+        <div class="sub-sub-dropdown">
+            <a href="#">
+                Glossary
+                <span class="subArrow">▸</span>
+            </a>
+            <div class="sub-sub-dropdown-content">
+                <a href="locations.html">Locations</a>
+                <a href="races.html">Races</a>
+                <a href="factions.html">Factions</a>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -43,6 +54,15 @@ document.querySelector(".writeHeader").innerHTML = `
         <a href="metal-archive.html">Archive</a>
         <a href="metal-characters.html">Characters</a>
         <a href="metal-wip.html">Gallery</a>
+        <div class="sub-sub-dropdown">
+            <a href="#">
+                Glossary
+                <span class="subArrow">▸</span>
+            </a>
+            <div class="sub-sub-dropdown-content">
+                <a href="metal-locations.html">Locations</a>
+            </div>
+        </div>
     </div>
 </div>
 

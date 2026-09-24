@@ -87,6 +87,31 @@ html {
   scroll-behavior: smooth;
 }
 
+/* custom cursor (handled by comic_cursor.js) */
+
+body {
+  cursor: none;
+}
+
+#customCursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  background-size: contain; /* was: cover */
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.15s ease;
+}
+
+/* enforce custom cursor everywhere — must stay last / use !important so no other
+   rule (existing or future) can bring back the native OS cursor */
+*, *::before, *::after {
+  cursor: none !important;
+}
+
 /* background */
 
 body {
@@ -234,6 +259,7 @@ body::after  { right: 0; }
   height: auto;
   margin-bottom: 8px;
   outline: 2px solid #00000022;
+  transition: max-width 0.3s ease;   /* NEW - animates the image growing */
 }
 
 .galleryItem h5 {
@@ -244,6 +270,37 @@ body::after  { right: 0; }
   margin: 0;
   font-size: 0.9em;
   color: #421a1a;
+}
+
+.galleryItem {
+  cursor: pointer;
+  transition: grid-column 0.3s ease;
+}
+
+.galleryItem.expanded {
+  grid-column: 1 / -1;
+  order: -1;                          /* NEW - moves the clicked box to the front */
+}
+
+.galleryItem.expanded img {
+  max-width: 1000px;                   /* bumped up from 300px so the grow is noticeable */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.galleryItemDescription {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  text-align: left;
+  margin-top: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+}
+
+.galleryItem.expanded .galleryItemDescription {
+  max-height: 600px;
+  opacity: 1;
+  margin-top: 10px;
 }
 
 @media (max-width: 700px) {
@@ -497,6 +554,60 @@ header hr {
   transition: transform 0.2s ease;
 }
 
+/* THIRD-LEVEL FLYOUT (Glossary subcategories) */
+.sub-sub-dropdown {
+  position: relative;
+}
+
+.sub-sub-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 160px;
+  background-color: #9b968f;
+  outline: 2px solid #000000;
+  box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.25);
+  z-index: 102;
+  text-align: left;
+}
+
+.sub-sub-dropdown-content a {
+  color: black;
+  padding: 8px 14px 8px 34px;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  white-space: nowrap;
+  background-color: #9b968f;
+}
+
+.sub-sub-dropdown-content a:hover {
+  background-color: #54576B;
+  color: #DEC46A;
+}
+
+.sub-sub-dropdown:hover .sub-sub-dropdown-content {
+  display: block;
+}
+
+.sub-sub-dropdown > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: default;
+}
+
+.sub-sub-dropdown > a .subArrow {
+  transition: transform 0.2s ease;
+}
+
+.sub-sub-dropdown:hover > a .subArrow {
+  transform: translateX(3px);
+  color: #DEC46A;
+}
+
 .sub-dropdown:hover > a .subArrow {
   transform: translateX(3px);
   color: #DEC46A;
@@ -533,14 +644,23 @@ header hr {
   }
 }
 
-/* On mobile/narrow screens, make sub-dropdown stack underneath instead of flying out to the right */
+/* On mobile/narrow screens, make sub-dropdown and sub-sub-dropdown stack underneath instead of flying out to the right */
 @media screen and (max-width: 768px) {
-  .sub-dropdown-content {
+  .sub-dropdown-content,
+  .sub-sub-dropdown-content {
     position: relative;
     left: 0;
     top: 0;
     outline: none;
     border-top: 1px solid #000000;
+  }
+
+  .sub-sub-dropdown:hover .sub-sub-dropdown-content {
+    display: none;
+  }
+
+  .dropdown.mobile-open .sub-sub-dropdown-content {
+    display: block;
   }
 }
 
@@ -550,7 +670,7 @@ header hr {
 .writeLatestComics {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch; /* was flex-start — makes both cards match the tallest one */
   gap: 30px;
   flex-wrap: wrap;
   margin: 20px auto;
@@ -558,10 +678,11 @@ header hr {
 }
 
 .latestComicCard {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 440px;
   max-width: 100%;
-  box-sizing: border-box; /* ensures padding and borders don't push the width past 100% */
+  box-sizing: border-box;
   text-decoration: none;
   color: #000000;
   background-color: #C7C2BD;
@@ -583,7 +704,8 @@ header hr {
 .latestComicCard img {
   display: block;
   width: 100%;
-  height: auto;
+  aspect-ratio: 4 / 3; /* pick whatever ratio matches your real thumbnails */
+  object-fit: cover;   /* crops to fill that ratio instead of stretching */
   outline: 2px solid #000000;
 }
 
@@ -1080,3 +1202,4 @@ ws-widget[type="comments"] {
     margin: 0 auto 12px;
   }
 }
+
