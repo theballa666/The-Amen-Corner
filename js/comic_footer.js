@@ -93,9 +93,11 @@ document.querySelector(".writeFooter").innerHTML = `
                 </div>
             </div>
 
-            <div class="footerWidgetSlotCenter">
-                <!-- Widget 3 goes here, e.g. <ws-widget type="..." iid="..."></ws-widget> -->
-            </div>
+<div class="footerWidgetSlotCenter">
+    <a href="https://www.goodreads.com/user/show/151275369-mister-anderson" target="_blank" rel="noopener" class="footerCenterLink">
+        <img src="img/reading.webp" alt="Mister Anderson Goodreads" />
+    </a>
+</div>
 
             <div class="footerWidgetSlot">
                 <style type="text/css" media="screen">
