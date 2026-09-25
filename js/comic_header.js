@@ -90,17 +90,58 @@ window.addEventListener('DOMContentLoaded', () => {
     const dropbtn = document.querySelector('.dropbtn');
 
     if (dropdown && dropbtn) {
+        function closeAllSubmenus() {
+            dropdown.querySelectorAll('.sub-dropdown.mobile-open, .sub-sub-dropdown.mobile-open').forEach((el) => {
+                el.classList.remove('mobile-open');
+            });
+        }
+
         dropbtn.addEventListener('pointerdown', (e) => {
             if (window.innerWidth <= 768) {
                 e.preventDefault();
                 e.stopPropagation();
                 dropdown.classList.toggle('mobile-open');
+                if (!dropdown.classList.contains('mobile-open')) {
+                    closeAllSubmenus();
+                }
             }
+        });
+
+        //tapping a comic's own row (e.g. "Ov Flask and Folly ▸") toggles just that
+        //comic's submenu on mobile, instead of following the link straight to its archive page
+        dropdown.querySelectorAll('.sub-dropdown > a').forEach((link) => {
+            link.addEventListener('pointerdown', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const subDropdown = link.closest('.sub-dropdown');
+                    const wasOpen = subDropdown.classList.contains('mobile-open');
+
+                    //accordion: collapse any other open comic submenu first
+                    dropdown.querySelectorAll('.sub-dropdown.mobile-open').forEach((el) => {
+                        if (el !== subDropdown) el.classList.remove('mobile-open');
+                    });
+
+                    subDropdown.classList.toggle('mobile-open', !wasOpen);
+                }
+            });
+        });
+
+        //same idea one level deeper, for the "Glossary ▸" flyout
+        dropdown.querySelectorAll('.sub-sub-dropdown > a').forEach((link) => {
+            link.addEventListener('pointerdown', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    link.closest('.sub-sub-dropdown').classList.toggle('mobile-open');
+                }
+            });
         });
 
         document.addEventListener('pointerdown', (e) => {
             if (window.innerWidth <= 768 && !dropdown.contains(e.target)) {
                 dropdown.classList.remove('mobile-open');
+                closeAllSubmenus();
             }
         });
     }

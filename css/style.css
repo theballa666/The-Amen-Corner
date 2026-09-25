@@ -673,14 +673,16 @@ header hr {
   color: #DEC46A;
 }
 
-/* Add these rules to style.css */
-
 @media screen and (max-width: 768px) {
   .dropdown:hover .dropdown-content {
     display: none;
   }
 
   .sub-dropdown:hover .sub-dropdown-content {
+    display: none;
+  }
+
+  .sub-sub-dropdown:hover .sub-sub-dropdown-content {
     display: none;
   }
 
@@ -694,21 +696,10 @@ header hr {
     border-top: 2px solid #000000;
   }
 
-  .dropdown.mobile-open .sub-dropdown-content {
-    display: block;
-    position: relative;
-    left: 0;
-    top: 0;
-    outline: none;
-    border-top: 1px solid #000000;
-  }
-}
-
-/* On mobile/narrow screens, make sub-dropdown and sub-sub-dropdown stack underneath instead of flying out to the right */
-@media screen and (max-width: 768px) {
-
+  /* sub-menus stay hidden until their OWN toggle is tapped, even while COMICS is open */
   .sub-dropdown-content,
   .sub-sub-dropdown-content {
+    display: none;
     position: relative;
     left: 0;
     top: 0;
@@ -716,11 +707,11 @@ header hr {
     border-top: 1px solid #000000;
   }
 
-  .sub-sub-dropdown:hover .sub-sub-dropdown-content {
-    display: none;
+  .sub-dropdown.mobile-open > .sub-dropdown-content {
+    display: block;
   }
 
-  .dropdown.mobile-open .sub-sub-dropdown-content {
+  .sub-sub-dropdown.mobile-open > .sub-sub-dropdown-content {
     display: block;
   }
 }
