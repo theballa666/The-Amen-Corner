@@ -1271,25 +1271,28 @@ ws-widget[type="comments"] {
 
   .charRowInner {
     display: flex;
+    flex-direction: column;
     align-items: stretch;
-    /* must be stretch, not flex-start, or charBio never grows tall enough */
-    gap: 24px;
+    gap: 16px;
   }
 
   .charImageBlock {
-    flex-shrink: 0;
-    width: 350px;
-    /* margin-top: 45px;  ← remove this, it's no longer needed */
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .charImageBlock p {
+    text-align: center;
   }
 
   .charBio {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* centers the whole group of <p> lines as one unit */
     text-align: left;
-    flex-grow: 1;
-    max-width: 650px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     padding: 10px;
   }
 
